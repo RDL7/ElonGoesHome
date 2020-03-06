@@ -10,7 +10,7 @@ public class ShipMovementScript : MonoBehaviour
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
-
+    public GameObject spawnerPrefab;
     public float runSpeed = 20.0f;
     void Start()
     {
@@ -22,6 +22,9 @@ public class ShipMovementScript : MonoBehaviour
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        if (Input.GetKeyDown("space")) {
+            Instantiate(spawnerPrefab, this.gameObject.transform.position, Quaternion.identity);
+        }
     }
 
     void FixedUpdate()
