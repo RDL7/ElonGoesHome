@@ -19,9 +19,9 @@ public class ObjectRespawner : MonoBehaviour
         {
             Vector3 pos = new Vector3(UnityEngine.Random.Range(-8, 8), this.transform.position.y, this.transform.position.z);
             GameObject gm = Instantiate(this.asteroidPrefab, pos, Quaternion.identity) as GameObject;
-            gm.GetComponent<Rigidbody2D>().mass = UnityEngine.Random.Range(1, 8);
+            gm.GetComponent<Rigidbody2D>().mass = UnityEngine.Random.Range(1, 3);
+            gm.GetComponent<Rigidbody2D>().gravityScale = gm.GetComponent<Rigidbody2D>().mass;
             gm.gameObject.transform.localScale = new Vector3(UnityEngine.Random.Range(1, 4), UnityEngine.Random.Range(1, 4), 0);
-            // gm.GetComponent<Rigidbody2D>().mass = UnityEngine.Random.Range(1, 8);
         }
     }
     IEnumerator asteroidWave()
