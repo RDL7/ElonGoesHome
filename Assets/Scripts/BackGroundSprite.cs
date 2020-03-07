@@ -30,7 +30,6 @@ public class BackGroundSprite : MonoBehaviour
     {
         if (col.gameObject.tag == "WorldSpammer")
         {
-            print("triger BG");
             if (gameObject == BG_1)
             {
                 BG_2.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + SpriteHeight);

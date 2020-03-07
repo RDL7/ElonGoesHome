@@ -30,7 +30,6 @@ public class CameraSwitch : MonoBehaviour
 
     void Start()
     {
-        this.gameStateCounter = 0;
         this.cameraTwo = this.cameras[0];
 
         // Managing the camera zoom in-out
@@ -62,24 +61,31 @@ public class CameraSwitch : MonoBehaviour
 
     void secondIsAccurateCamera()
     {
-        if (this.gameStateCounter > 0 && this.gameStateCounter <= 10)
+        float distRange = GlobalClass.DistanceToMars / 5;
+        print(distRange + " " + 2 * distRange);
+        if (GlobalClass.DistanceTraveled > 0 && GlobalClass.DistanceTraveled <= 2 * distRange)
         {
+            print("camera 1");
             this.cameraTwo = this.cameras[0];
         }
-        else if (this.gameStateCounter > 10 && this.gameStateCounter <= 20)
+        else if (GlobalClass.DistanceTraveled > 2 * distRange && GlobalClass.DistanceTraveled <= 4 * distRange)
         {
+            print("camera 2");
             this.cameraTwo = this.cameras[1];
         }
-        else if (this.gameStateCounter > 20 && this.gameStateCounter <= 30)
+        else if (GlobalClass.DistanceTraveled > 4 * distRange && GlobalClass.DistanceTraveled <= 6 * distRange)
         {
+            print("camera 3");
             this.cameraTwo = this.cameras[2];
         }
-        else if (this.gameStateCounter > 30 && this.gameStateCounter <= 40)
+        else if (GlobalClass.DistanceTraveled > 6 * distRange && GlobalClass.DistanceTraveled <= 8 * distRange)
         {
+            print("camera 4");
             this.cameraTwo = this.cameras[3];
         }
-        else if (this.gameStateCounter > 40 && this.gameStateCounter <= 50)
+        else if (GlobalClass.DistanceTraveled > 8 * distRange && GlobalClass.DistanceTraveled <= 10 * distRange)
         {
+            print("camera 5");
             this.cameraTwo = this.cameras[4];
         }
     }
@@ -148,30 +154,33 @@ public class CameraSwitch : MonoBehaviour
         {
             this.toggleCamera();
         }
-        switch (this.gameStateCounter)
+
+        switch ((int)(GlobalClass.DistanceTraveled / 2))
         {
-            case (5):
+            case (50):
                 if (!this.tweetOne)
                 {
                     this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("The coronavirus panic is dumb");
                     this.tweetOne = true;
                 }
                 break;
-            case (10):
+            case (160):
                 if (!this.tweetTwo)
                 {
                     this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Mad respect for the makers of things");
                     this.tweetTwo = true;
                 }
                 break;
-            case (15):
-                if (!this.tweetThree) {
+            case (220):
+                if (!this.tweetThree)
+                {
                     this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Bernie’s tax rate is 0.2 % too high!");
                     this.tweetThree = true;
                 }
                 break;
-            case (20):
-                if (!this.tweetFive) {
+            case (330):
+                if (!this.tweetFive)
+                {
                     this.tweetFive = true;
                     this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Where’s Flextape when you need it!?");
                 }

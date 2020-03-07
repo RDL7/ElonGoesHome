@@ -5,7 +5,7 @@ using UnityEngine;
 public static class GlobalClass
 {
     public static float DistanceTraveled;
-    public static float DistanceToMars = 1000.0f;
+    public static float DistanceToMars = 200.0f;
 
 
 

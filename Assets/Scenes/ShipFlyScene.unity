@@ -865,26 +865,56 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6607181618748232662, guid: ade2319bb764b1eb98065643b11a1e53,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: baa2a7fb45c171ad0804c4404b988fc0,
+        type: 3}
     - target: {fileID: 6607181618885658097, guid: ade2319bb764b1eb98065643b11a1e53,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607181618885658097, guid: ade2319bb764b1eb98065643b11a1e53,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9535f081928c068bab7c0a90c024966b,
+        type: 3}
+    - target: {fileID: 6607181619613989070, guid: ade2319bb764b1eb98065643b11a1e53,
         type: 3}
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6607181619613989070, guid: ade2319bb764b1eb98065643b11a1e53,
         type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 04578efe62766f316b9dab760f271e4b,
+        type: 3}
+    - target: {fileID: 6607181619873210205, guid: ade2319bb764b1eb98065643b11a1e53,
+        type: 3}
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6607181619873210205, guid: ade2319bb764b1eb98065643b11a1e53,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: baa2a7fb45c171ad0804c4404b988fc0,
+        type: 3}
+    - target: {fileID: 6607181619960075224, guid: ade2319bb764b1eb98065643b11a1e53,
         type: 3}
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6607181619960075224, guid: ade2319bb764b1eb98065643b11a1e53,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 30a5e94d931e10a6492679568c532199,
+        type: 3}
     - target: {fileID: 6607181620309290881, guid: ade2319bb764b1eb98065643b11a1e53,
         type: 3}
       propertyPath: m_LocalPosition.x
