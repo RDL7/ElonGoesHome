@@ -53,7 +53,6 @@ public class CameraSwitch : MonoBehaviour
 
     void secondIsAccurateCamera()
     {
-        print(this.gameStateCounter);
         if (this.gameStateCounter > 0 && this.gameStateCounter <= 10)
         {
             this.cameraTwo = this.cameras[0];
