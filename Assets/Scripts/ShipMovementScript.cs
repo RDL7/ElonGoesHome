@@ -22,7 +22,6 @@ public class ShipMovementScript : MonoBehaviour
 
     void Start()
     {
-        // TODO spriterendererd . bounds
         this.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         this.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
         body = GetComponent<Rigidbody2D>();

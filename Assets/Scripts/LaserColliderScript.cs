@@ -19,6 +19,8 @@ public class LaserColliderScript : MonoBehaviour
         if (other.gameObject.tag == "Destroyable")
         {
             Destroy(other.gameObject);
+            // TODO Create a gif instance here
+            Destroy(this.gameObject);
         }
     }
     void OnBecameInvisible() {
