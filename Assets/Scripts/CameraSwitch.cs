@@ -117,7 +117,7 @@ public class CameraSwitch : MonoBehaviour
 
     void updatePosition(Vector3 target)
     {
-        Vector3 newLocation = Vector3.MoveTowards(this.activeCamera.GetComponent<Camera>().transform.position, target, (float)1);
+        Vector3 newLocation = Vector3.MoveTowards(this.activeCamera.GetComponent<Camera>().transform.position, target, (float)250 * Time.deltaTime);
         this.activeCamera.GetComponent<Camera>().transform.position = new Vector3(newLocation.x, newLocation.y, -10);
         // this.transform.position = new Vector3(target.x, target.y, -10);
     }
