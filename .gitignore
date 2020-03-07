@@ -50,3 +50,6 @@ sysinfo.txt
 .unitypackage
 # Crashlytics generated file
 crashlytics-build.properties
+.vscode/settings.json
+Assembly-CSharp.csproj
+Assembly-CSharp.csproj
