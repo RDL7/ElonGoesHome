@@ -362,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6971744084015482101, guid: db743b12477fec3c2845d204cbcdf9c6, type: 3}
-    - {fileID: 6971744084015482102, guid: db743b12477fec3c2845d204cbcdf9c6, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: db743b12477fec3c2845d204cbcdf9c6, type: 3}
 --- !u!4 &1855102886 stripped
 Transform:
@@ -611,13 +611,11 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 6971744084015482102, guid: db743b12477fec3c2845d204cbcdf9c6,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: toZoomInto
       value: 
       objectReference: {fileID: 1188256107}
-    - target: {fileID: 6971744084015482102, guid: db743b12477fec3c2845d204cbcdf9c6,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -676,6 +674,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6971744084015482102, guid: db743b12477fec3c2845d204cbcdf9c6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db743b12477fec3c2845d204cbcdf9c6, type: 3}
