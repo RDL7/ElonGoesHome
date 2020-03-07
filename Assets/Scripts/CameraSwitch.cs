@@ -9,10 +9,18 @@ public class CameraSwitch : MonoBehaviour
     private double maxZoom = 5f;
     private bool zoomedIn = false;
     private bool currentlyZoomingIn = false;
+    private float inititalZ;
+    void Start () {
+        this.inititalZ = this.transform.position.z;
+    }
+
     void Update()
     {
         double target = this.zoomedIn ? this.minZoom : this.maxZoom;
+        Vector3 targetPosition = this.zoomedIn ? toZoomInto.transform.position : new Vector3(0, 0, this.inititalZ);
+
         this.updateZoom(target);
+        this.updatePosition(targetPosition);
         if (this.gameObject.GetComponent<Camera>().orthographicSize == target) {
             this.currentlyZoomingIn = false;
         }
@@ -38,6 +46,15 @@ public class CameraSwitch : MonoBehaviour
             this.gameObject
                 .GetComponent<Camera>()
                 .orthographicSize = (float)current;
+        }
+    }
+
+    void updatePosition(Vector3 target) {
+        if (this.currentlyZoomingIn) {
+            Vector3 newLocation = Vector3.MoveTowards(this.transform.position, target, (float)1);
+            this.transform.position = new Vector3(newLocation.x, newLocation.y, -10);
+        } else if (this.zoomedIn) {
+            this.transform.position = new Vector3(target.x, target.y, -10);
         }
     }
 }
