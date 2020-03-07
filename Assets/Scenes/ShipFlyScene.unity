@@ -308,6 +308,12 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.94, y: 1.48}
   m_Direction: 0
+--- !u!1 &1880684080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2839210146056093089, guid: b1ecb7602b6b4a95c9dad6fab5db79d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2839210145786055569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1880684081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2839210146056093088, guid: b1ecb7602b6b4a95c9dad6fab5db79d3,
@@ -542,6 +548,17 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1999344469}
+    - target: {fileID: 3516066654683260755, guid: 06a789e66b9ef56148528e61e050d114,
+        type: 3}
+      propertyPath: laserPrefab
+      value: 
+      objectReference: {fileID: 3346596741090657065, guid: da83e1bd5aa77ae1686fa1830082723a,
+        type: 3}
+    - target: {fileID: 3516066654683260755, guid: 06a789e66b9ef56148528e61e050d114,
+        type: 3}
+      propertyPath: tweetSpawnerPrefab
+      value: 
+      objectReference: {fileID: 1880684080}
     - target: {fileID: 3516066654683260756, guid: 06a789e66b9ef56148528e61e050d114,
         type: 3}
       propertyPath: m_Name

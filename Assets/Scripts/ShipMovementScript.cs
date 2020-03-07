@@ -12,7 +12,8 @@ public class ShipMovementScript : MonoBehaviour
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
-    public GameObject spawnerPrefab;
+    public GameObject laserPrefab;
+    public GameObject tweetSpawnerPrefab;
     public float runSpeed = 20.0f;
 
     private float x;
@@ -35,7 +36,7 @@ public class ShipMovementScript : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
         if (Input.GetKeyDown("space"))
         {
-            Instantiate(spawnerPrefab, this.gameObject.transform.position, Quaternion.identity);
+            Instantiate(laserPrefab, this.gameObject.transform.position, Quaternion.identity);
         }
     }
 
@@ -75,9 +76,10 @@ public class ShipMovementScript : MonoBehaviour
 
     public void decreaseHealth(float degradeHealthBy) {
         this.health -= (int)degradeHealthBy;
-        print(degradeHealthBy);
+
+        this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Ouch Why did I leave?");
+
         if (this.health < 0 ) {
-            // TODO trigger an angry tweet
             Destroy(this.gameObject);
         }
     }
