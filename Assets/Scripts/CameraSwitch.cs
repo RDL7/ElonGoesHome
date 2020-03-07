@@ -52,10 +52,12 @@ public class CameraSwitch : MonoBehaviour
         if (this.activeCamera == this.cameraOne)
         {
             this.cameraOneZoomingIn = true;
+            GlobalClass.Pauze = true;
         }
         else
         {
             this.cameraTwoZoomingIn = true;
+            GlobalClass.Pauze = false;
         }
     }
 
