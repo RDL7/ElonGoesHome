@@ -43,7 +43,7 @@ public class ProgressBar : MonoBehaviour
         ProgressBarFill.transform.localScale = new Vector2(ProgressBarFill.transform.localScale.x, CurrentProgressBarScale);
 
         //ProgressCarIcon
-        ProgressCarIcon.transform.localPosition = new Vector2(ProgressCarIcon.transform.localPosition.x, CurrentProgressBarScale * (9.75f / MaxProgressBarScale));
+        ProgressCarIcon.transform.localPosition = new Vector2(ProgressCarIcon.transform.localPosition.x, -4.91f + CurrentProgressBarScale * (9.75f / MaxProgressBarScale));
     }
 
     void GameEnd()
