@@ -64,30 +64,24 @@ public class CameraSwitch : MonoBehaviour
     void secondIsAccurateCamera()
     {
         float distRange = GlobalClass.DistanceToMars / 5;
-        print(distRange + " " + 2 * distRange);
         if (GlobalClass.DistanceTraveled > 0 && GlobalClass.DistanceTraveled <= 2 * distRange)
         {
-            print("camera 1");
             this.cameraTwo = this.cameras[0];
         }
         else if (GlobalClass.DistanceTraveled > 2 * distRange && GlobalClass.DistanceTraveled <= 4 * distRange)
         {
-            print("camera 2");
             this.cameraTwo = this.cameras[1];
         }
         else if (GlobalClass.DistanceTraveled > 4 * distRange && GlobalClass.DistanceTraveled <= 6 * distRange)
         {
-            print("camera 3");
             this.cameraTwo = this.cameras[2];
         }
         else if (GlobalClass.DistanceTraveled > 6 * distRange && GlobalClass.DistanceTraveled <= 8 * distRange)
         {
-            print("camera 4");
             this.cameraTwo = this.cameras[3];
         }
         else if (GlobalClass.DistanceTraveled > 8 * distRange && GlobalClass.DistanceTraveled <= 10 * distRange)
         {
-            print("camera 5");
             this.cameraTwo = this.cameras[4];
         }
     }
