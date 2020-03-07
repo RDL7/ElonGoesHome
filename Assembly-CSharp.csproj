@@ -48,9 +48,12 @@
      <Compile Include="Assets\Scripts\BackGround.cs" />
      <Compile Include="Assets\Scripts\BackGroundSprite.cs" />
      <Compile Include="Assets\Scripts\CameraSwitch.cs" />
+     <Compile Include="Assets\Scripts\CountShipDistance.cs" />
      <Compile Include="Assets\Scripts\DestroyableObjectCollector.cs" />
+     <Compile Include="Assets\Scripts\GlobalClass.cs" />
      <Compile Include="Assets\Scripts\LaserColliderScript.cs" />
      <Compile Include="Assets\Scripts\ObjectRespawner.cs" />
+     <Compile Include="Assets\Scripts\ProgressBar.cs" />
      <Compile Include="Assets\Scripts\ShipMovementScript.cs" />
      <Compile Include="Assets\Scripts\TweetScript.cs" />
      <Compile Include="Assets\Scripts\TweetSpawner.cs" />
