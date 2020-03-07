@@ -638,6 +638,11 @@ PrefabInstance:
       propertyPath: cameraOne
       value: 
       objectReference: {fileID: 1999344467}
+    - target: {fileID: 6607181620309290886, guid: ade2319bb764b1eb98065643b11a1e53,
+        type: 3}
+      propertyPath: tweetSpawnerPrefab
+      value: 
+      objectReference: {fileID: 1880684080}
     - target: {fileID: 6607181620309290887, guid: ade2319bb764b1eb98065643b11a1e53,
         type: 3}
       propertyPath: m_Name

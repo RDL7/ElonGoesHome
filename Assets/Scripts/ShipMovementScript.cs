@@ -77,7 +77,8 @@ public class ShipMovementScript : MonoBehaviour
     public void decreaseHealth(float degradeHealthBy) {
         this.health -= (int)degradeHealthBy;
 
-        this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Ouch Why did I leave?");
+        // TODO Add more variations!
+        this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Fucking asteroids");
 
         if (this.health < 0 ) {
             Destroy(this.gameObject);

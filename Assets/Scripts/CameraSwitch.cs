@@ -19,6 +19,15 @@ public class CameraSwitch : MonoBehaviour
     private double minZoom = 0.25f;
     private double maxZoom = 5f;
     private GameObject activeCamera;
+
+    public GameObject tweetSpawnerPrefab;
+
+    private bool tweetOne = false;
+    private bool tweetTwo = false;
+    private bool tweetThree = false;
+    private bool tweetFour = false;
+    private bool tweetFive = false;
+
     void Start()
     {
         this.gameStateCounter = 0;
@@ -138,6 +147,37 @@ public class CameraSwitch : MonoBehaviour
         if (Input.GetKeyDown("e") && !(this.cameraTwoZoomingIn || this.cameraTwoZoomingOut || this.cameraOneZoomingIn || this.cameraOneZoomingOut))
         {
             this.toggleCamera();
+        }
+        switch (this.gameStateCounter)
+        {
+            case (5):
+                if (!this.tweetOne)
+                {
+                    this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("The coronavirus panic is dumb");
+                    this.tweetOne = true;
+                }
+                break;
+            case (10):
+                if (!this.tweetTwo)
+                {
+                    this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Mad respect for the makers of things");
+                    this.tweetTwo = true;
+                }
+                break;
+            case (15):
+                if (!this.tweetThree) {
+                    this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Bernie’s tax rate is 0.2 % too high!");
+                    this.tweetThree = true;
+                }
+                break;
+            case (20):
+                if (!this.tweetFive) {
+                    this.tweetFive = true;
+                    this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Where’s Flextape when you need it!?");
+                }
+                break;
+            default:
+                break;
         }
     }
 
