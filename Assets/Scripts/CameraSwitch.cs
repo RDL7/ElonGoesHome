@@ -6,11 +6,13 @@ public class CameraSwitch : MonoBehaviour
 {
     public GameObject toZoomInto;
 
+    public int gameStateCounter;
     public GameObject cameraOne;
     private bool cameraOneZoomingIn;
     private bool cameraOneZoomingOut;
 
-    public GameObject cameraTwo;
+    public GameObject[] cameras;
+    private GameObject cameraTwo;
     private bool cameraTwoZoomingIn;
     private bool cameraTwoZoomingOut;
 
@@ -19,8 +21,17 @@ public class CameraSwitch : MonoBehaviour
     private GameObject activeCamera;
     void Start()
     {
+        this.gameStateCounter = 0;
+        this.cameraTwo = this.cameras[0];
+
+        // Managing the camera zoom in-out
         this.cameraOne.gameObject.SetActive(true);
-        this.cameraTwo.gameObject.SetActive(false);
+
+        foreach (GameObject item in this.cameras)
+        {
+            item.gameObject.SetActive(false);
+        }
+        // this.cameraTwo.gameObject.SetActive(false);
         this.activeCamera = this.cameraOne;
         this.cameraOneZoomingIn = false;
         this.cameraOneZoomingOut = false;
@@ -40,6 +51,31 @@ public class CameraSwitch : MonoBehaviour
         }
     }
 
+    void secondIsAccurateCamera()
+    {
+        print(this.gameStateCounter);
+        if (this.gameStateCounter > 0 && this.gameStateCounter <= 10)
+        {
+            this.cameraTwo = this.cameras[0];
+        }
+        else if (this.gameStateCounter > 10 && this.gameStateCounter <= 20)
+        {
+            this.cameraTwo = this.cameras[1];
+        }
+        else if (this.gameStateCounter > 20 && this.gameStateCounter <= 30)
+        {
+            this.cameraTwo = this.cameras[2];
+        }
+        else if (this.gameStateCounter > 30 && this.gameStateCounter <= 40)
+        {
+            this.cameraTwo = this.cameras[3];
+        }
+        else if (this.gameStateCounter > 40 && this.gameStateCounter <= 50)
+        {
+            this.cameraTwo = this.cameras[4];
+        }
+    }
+
     void Update()
     {
         if (this.activeCamera == this.cameraOne)
@@ -48,6 +84,7 @@ public class CameraSwitch : MonoBehaviour
             {
                 this.updateZoom(this.minZoom, (double)(-0.25));
 
+                this.secondIsAccurateCamera();
                 Vector3 targetPosition = toZoomInto.transform.position;
                 this.updatePosition(targetPosition);
                 if (this.minZoom == this.activeCamera.GetComponent<Camera>().orthographicSize)
