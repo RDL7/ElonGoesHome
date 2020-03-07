@@ -16,7 +16,6 @@ public class LaserColliderScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print(other.gameObject.tag);
         if (other.gameObject.tag == "Destroyable")
         {
             Destroy(other.gameObject);

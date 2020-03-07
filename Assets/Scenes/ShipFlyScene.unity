@@ -376,6 +376,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6971744082251421601}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1999344469 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6971744084015482100, guid: db743b12477fec3c2845d204cbcdf9c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6971744082251421601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3346596741495753836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -518,6 +524,11 @@ PrefabInstance:
       propertyPath: runSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3516066654683260755, guid: 06a789e66b9ef56148528e61e050d114,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1999344469}
     - target: {fileID: 3516066654683260756, guid: 06a789e66b9ef56148528e61e050d114,
         type: 3}
       propertyPath: m_Name
@@ -601,6 +612,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: toZoomInto
+      value: 
+      objectReference: {fileID: 1188256107}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6971744084015482098, guid: db743b12477fec3c2845d204cbcdf9c6,
         type: 3}
       propertyPath: m_Name
@@ -610,14 +629,6 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: toZoomInto
-      value: 
-      objectReference: {fileID: 1188256107}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6971744084015482103, guid: db743b12477fec3c2845d204cbcdf9c6,
         type: 3}
