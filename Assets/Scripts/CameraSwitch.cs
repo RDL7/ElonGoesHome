@@ -5,13 +5,15 @@ using UnityEngine;
 public class CameraSwitch : MonoBehaviour
 {
     public GameObject toZoomInto;
+
     public GameObject cameraOne;
-    private bool cameraOneZooming;
-    private bool cameraOneZoomedIn;
+    private bool cameraOneZoomingIn;
+    private bool cameraOneZoomingOut;
 
     public GameObject cameraTwo;
-    private bool cameraTwoZooming;
-    private bool cameraTwoZoomedIn;
+    private bool cameraTwoZoomingIn;
+    private bool cameraTwoZoomingOut;
+
     private double minZoom = 0.25f;
     private double maxZoom = 5f;
     private GameObject activeCamera;
@@ -20,81 +22,103 @@ public class CameraSwitch : MonoBehaviour
         this.cameraOne.gameObject.SetActive(true);
         this.cameraTwo.gameObject.SetActive(false);
         this.activeCamera = this.cameraOne;
+        this.cameraOneZoomingIn = false;
+        this.cameraOneZoomingOut = false;
+        this.cameraTwoZoomingIn = false;
+        this.cameraTwoZoomingOut = false;
     }
 
     void toggleCamera()
     {
-        if (this.cameraOne.activeSelf)
+        if (this.activeCamera == this.cameraOne)
         {
-            this.cameraOne.gameObject.SetActive(false);
-            this.cameraTwo.gameObject.SetActive(true);
-            this.activeCamera = this.cameraTwo;
-            this.cameraOneZoomedIn = false;
-            this.cameraOneZooming = true;
-            this.cameraTwoZoomedIn = true;
-            this.cameraTwoZooming = false;
+            this.cameraOneZoomingIn = true;
         }
         else
         {
-            this.cameraOne.gameObject.SetActive(true);
-            this.cameraTwo.gameObject.SetActive(false);
-            this.activeCamera = this.cameraOne;
-            this.cameraTwoZoomedIn = false;
-            this.cameraTwoZooming = true;
-            this.cameraOneZoomedIn = true;
-            this.cameraOneZooming = false;
+            this.cameraTwoZoomingIn = true;
         }
     }
 
     void Update()
     {
-        bool innerZoomedIn;
-        bool innerZoomingIn;
-        if (this.activeCamera == this.cameraOne) {
-            innerZoomedIn = this.cameraOneZoomedIn;
-            innerZoomingIn = this.cameraOneZooming;
-        } else {
-            innerZoomedIn = this.cameraTwoZoomedIn;
-            innerZoomingIn = this.cameraTwoZooming;
+        if (this.activeCamera == this.cameraOne)
+        {
+            if (this.cameraOneZoomingIn)
+            {
+                this.updateZoom(this.minZoom, (double)(-0.25));
+
+                Vector3 targetPosition = toZoomInto.transform.position;
+                this.updatePosition(targetPosition);
+                if (this.minZoom == this.activeCamera.GetComponent<Camera>().orthographicSize)
+                {
+                    this.cameraOneZoomingIn = false;
+                    this.cameraTwoZoomingOut = true;
+                    this.activeCamera = this.cameraTwo;
+                    this.cameraTwo.gameObject.SetActive(true);
+                    this.activeCamera.GetComponent<Camera>().orthographicSize = (float)this.minZoom;
+                }
+            }
+            else if (this.cameraOneZoomingOut)
+            {
+                Vector3 targetPosition = new Vector3(0, 0, -10);
+                this.updateZoom(this.maxZoom, (double)0.25);
+                this.updatePosition(targetPosition);
+                if (this.maxZoom == this.activeCamera.GetComponent<Camera>().orthographicSize)
+                {
+                    this.cameraOneZoomingOut = false;
+                    this.cameraOneZoomingIn = false;
+                }
+            }
         }
-        double target = innerZoomingIn ? this.minZoom : this.maxZoom;
-        Vector3 targetPosition = innerZoomingIn ? toZoomInto.transform.position : new Vector3(0, 0, -10);
+        else
+        {
+            if (this.cameraTwoZoomingIn)
+            {
+                this.updateZoom(this.minZoom, (double)(-0.25));
 
-        this.updateZoom(target, innerZoomedIn, innerZoomingIn);
-        this.updatePosition(targetPosition, innerZoomedIn, innerZoomingIn);
-
-        if (Input.GetKeyDown("e"))
+                Vector3 targetPosition = toZoomInto.transform.position;
+                this.updatePosition(targetPosition);
+                if (this.minZoom == this.activeCamera.GetComponent<Camera>().orthographicSize)
+                {
+                    this.cameraTwoZoomingIn = false;
+                    this.cameraOneZoomingOut = true;
+                    this.activeCamera = this.cameraOne;
+                    this.cameraTwo.gameObject.SetActive(false);
+                }
+            }
+            else if (this.cameraTwoZoomingOut)
+            {
+                Vector3 targetPosition = new Vector3(0, 0, -10);
+                this.updateZoom(this.maxZoom, (double)(+0.25));
+                this.updatePosition(targetPosition);
+                if (this.maxZoom == this.activeCamera.GetComponent<Camera>().orthographicSize)
+                {
+                    this.cameraTwoZoomingOut = false;
+                    this.cameraTwoZoomingIn = false;
+                }
+            }
+        }
+        if (Input.GetKeyDown("e") && !(this.cameraTwoZoomingIn || this.cameraTwoZoomingOut || this.cameraOneZoomingIn || this.cameraOneZoomingOut))
         {
             this.toggleCamera();
         }
     }
 
-    void updateZoom(double target, bool zoomedIn, bool zoomingIn)
+    void updateZoom(double target, double step)
     {
-        double step = zoomedIn ? -0.25 : 0.25;
         double current = this.activeCamera
             .GetComponent<Camera>()
             .orthographicSize;
-        if (zoomingIn)
-        {
-            current += step;
-            this.activeCamera
-                .GetComponent<Camera>()
-                .orthographicSize = (float)current;
-        }
+        this.activeCamera
+            .GetComponent<Camera>()
+            .orthographicSize = (float)(current + step);
     }
 
-    void updatePosition(Vector3 target, bool zoomedIn, bool zoomingIn)
+    void updatePosition(Vector3 target)
     {
-        if (zoomedIn)
-        {
-            Vector3 newLocation = Vector3.MoveTowards(this.transform.position, target, (float)1);
-            this.transform.position = new Vector3(newLocation.x, newLocation.y, -10);
-        }
-        else if (zoomingIn)
-        {
-            this.transform.position = new Vector3(target.x, target.y, -10);
-            this.toggleCamera();
-        }
+        Vector3 newLocation = Vector3.MoveTowards(this.activeCamera.GetComponent<Camera>().transform.position, target, (float)1);
+        this.activeCamera.GetComponent<Camera>().transform.position = new Vector3(newLocation.x, newLocation.y, -10);
+        // this.transform.position = new Vector3(target.x, target.y, -10);
     }
 }

@@ -606,6 +606,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6971744084015482100, guid: db743b12477fec3c2845d204cbcdf9c6,
+        type: 3}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6971744084015482102, guid: db743b12477fec3c2845d204cbcdf9c6,
         type: 3}
       propertyPath: toZoomInto
