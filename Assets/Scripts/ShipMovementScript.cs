@@ -8,7 +8,7 @@ public class ShipMovementScript : MonoBehaviour
     // Copied from https://stuartspixelgames.com/2018/06/24/simple-2d-top-down-movement-unity-c/
     Rigidbody2D body;
     public Camera mainCamera;
-
+    private int health;
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
@@ -22,6 +22,7 @@ public class ShipMovementScript : MonoBehaviour
 
     void Start()
     {
+        this.resetHealth();
         this.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         this.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
         body = GetComponent<Rigidbody2D>();
@@ -40,7 +41,6 @@ public class ShipMovementScript : MonoBehaviour
 
     void FixedUpdate()
     {
-
         Vector3 location = mainCamera.WorldToScreenPoint(this.gameObject.transform.position);
         bool leftEdgeReached = location.x - (this.x / 2 ) <= 0 + (this.x / 2);
         bool rightEdgeReached = location.x + (this.x / 2 ) >= Screen.width - (this.x / 2);
@@ -71,5 +71,32 @@ public class ShipMovementScript : MonoBehaviour
             vertical *= moveLimiter;
         }
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+    }
+
+    public void decreaseHealth(float degradeHealthBy) {
+        this.health -= (int)degradeHealthBy;
+        print(degradeHealthBy);
+        if (this.health < 0 ) {
+            // TODO trigger an angry tweet
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Destroyable")
+        {
+            // TODO Create a gif instance here
+            this.decreaseHealth(other.gameObject.transform.localScale.x * other.gameObject.GetComponent<Rigidbody2D>().mass);
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void resetHealth() {
+        this.health = 100;
+    }
+
+    public int getHealth() {
+        return this.health;
     }
 }
