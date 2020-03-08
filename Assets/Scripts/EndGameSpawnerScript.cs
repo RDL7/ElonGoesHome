@@ -17,9 +17,9 @@ public class EndGameSpawnerScript : MonoBehaviour
         TweetSpawner.GetComponent<TweetSpawner>().spawn("Mars - home, sweet home...");
         yield return new WaitForSeconds(5);
         Instantiate(this.EndLogoPrefab, this.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(8);
         Instantiate(this.Mars, this.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         print("Quitting the app");
         Application.Quit();
     }

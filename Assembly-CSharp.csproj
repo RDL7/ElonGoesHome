@@ -45,6 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\BackGround.cs" />
      <Compile Include="Assets\Scripts\BackGroundSprite.cs" />
      <Compile Include="Assets\Scripts\BlinkHealthBarPart.cs" />

@@ -19,6 +19,7 @@ public class LaserColliderScript : MonoBehaviour
         if (other.gameObject.tag == "Destroyable")
         {
             Destroy(other.gameObject);
+            GameObject.Find("GameManager").GetComponent<AudioManager>().play("shipExploding");
             // TODO Create a gif instance here
             Destroy(this.gameObject);
         }

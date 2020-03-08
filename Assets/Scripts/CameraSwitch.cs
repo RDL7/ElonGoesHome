@@ -105,6 +105,7 @@ public class CameraSwitch : MonoBehaviour
                 this.updatePosition(targetPosition);
                 if (this.minZoom == this.activeCamera.GetComponent<Camera>().orthographicSize)
                 {
+                    GameObject.Find("GameManager").GetComponent<AudioManager>().play("music");
                     this.cameraOneZoomingIn = false;
                     this.cameraTwoZoomingOut = true;
                     this.activeCamera = this.cameraTwo;
@@ -134,6 +135,7 @@ public class CameraSwitch : MonoBehaviour
                 this.updatePosition(targetPosition);
                 if (this.minZoom == this.activeCamera.GetComponent<Camera>().orthographicSize)
                 {
+                    GameObject.Find("GameManager").GetComponent<AudioManager>().play("ambient");
                     this.cameraTwoZoomingIn = false;
                     this.cameraOneZoomingOut = true;
                     this.activeCamera = this.cameraOne;

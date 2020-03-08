@@ -25,6 +25,7 @@ public class TweetSpawner : MonoBehaviour
 
     public void spawn(string text) {
         float tmp = Time.time;
+        GameObject.Find("GameManager").GetComponent<AudioManager>().play("tweet");
         GameObject a;
         if (tmp - this.thelastSpawnedTweetTime  >= 2.5f) {
             a = Instantiate(this.TweetPrefab, this.gameObject.transform.position, Quaternion.identity, this.gameObject.transform) as GameObject;

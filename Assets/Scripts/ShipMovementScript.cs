@@ -49,6 +49,7 @@ public class ShipMovementScript : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
         if (Input.GetKeyDown("space"))
         {
+            GameObject.Find("GameManager").GetComponent<AudioManager>().play("laser");
             Instantiate(laserPrefab, this.gameObject.transform.position, Quaternion.identity);
         }
     }
@@ -108,6 +109,7 @@ public class ShipMovementScript : MonoBehaviour
         if (other.gameObject.tag == "Destroyable")
         {
             // TODO Create a gif instance here
+            GameObject.Find("GameManager").GetComponent<AudioManager>().play("shipExploding");
             this.decreaseHealth(other.gameObject.transform.localScale.x * other.gameObject.GetComponent<Rigidbody2D>().mass*10);
             Destroy(other.gameObject);
         }
