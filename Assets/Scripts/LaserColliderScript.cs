@@ -36,7 +36,7 @@ public class LaserColliderScript : MonoBehaviour
 
             GameObject.Find("GameManager").GetComponent<AudioManager>().play("shipExploding");
             // TODO Create a gif instance here
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
