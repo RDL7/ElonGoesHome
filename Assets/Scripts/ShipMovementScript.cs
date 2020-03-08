@@ -54,6 +54,13 @@ public class ShipMovementScript : MonoBehaviour
         }
     }
 
+    IEnumerator shake() {
+        GameObject.Find("GameManager").GetComponent<ScreenShake>().shake = true;
+        yield return new WaitForSeconds(0.5f);
+        GameObject.Find("GameManager").GetComponent<ScreenShake>().shake = false;
+        GameObject.Find("GameManager").GetComponent<ScreenShake>().resetCamera();
+    }
+
     void FixedUpdate()
     {
         Vector3 location = mainCamera.WorldToScreenPoint(this.gameObject.transform.position);
@@ -95,6 +102,7 @@ public class ShipMovementScript : MonoBehaviour
         print("health: " + health);
 
         // TODO Add more variations!
+        StartCoroutine(this.shake());
         this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Fucking asteroids");
 
         if (this.health < 0 ) {
