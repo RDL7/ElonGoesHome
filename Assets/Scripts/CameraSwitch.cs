@@ -27,6 +27,12 @@ public class CameraSwitch : MonoBehaviour
     private bool tweetThree = false;
     private bool tweetFour = false;
     private bool tweetFive = false;
+    private bool tweetSix = false;
+    private bool tweetSeven = false;
+    private bool tweetEight = false;
+    private bool tweetNine = false;
+    private bool tweetTen = false;
+
 
     void Start()
     {
@@ -63,7 +69,7 @@ public class CameraSwitch : MonoBehaviour
 
     void secondIsAccurateCamera()
     {
-        float distRange = GlobalClass.DistanceToMars / 5;
+        float distRange = GlobalClass.DistanceToMars / 10;
         if (GlobalClass.DistanceTraveled > 0 && GlobalClass.DistanceTraveled <= 2 * distRange)
         {
             this.cameraTwo = this.cameras[0];
@@ -151,38 +157,86 @@ public class CameraSwitch : MonoBehaviour
             this.toggleCamera();
         }
 
-        switch ((int)(GlobalClass.DistanceTraveled / 2))
+        float distRange = GlobalClass.DistanceToMars / 10;
+        if (distRange * 1 == (int)(GlobalClass.DistanceTraveled))
         {
-            case (50):
-                if (!this.tweetOne)
-                {
-                    this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("The coronavirus panic is dumb");
-                    this.tweetOne = true;
-                }
-                break;
-            case (160):
-                if (!this.tweetTwo)
-                {
-                    this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Mad respect for the makers of things");
-                    this.tweetTwo = true;
-                }
-                break;
-            case (220):
-                if (!this.tweetThree)
-                {
-                    this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Bernie’s tax rate is 0.2 % too high!");
-                    this.tweetThree = true;
-                }
-                break;
-            case (330):
-                if (!this.tweetFive)
-                {
-                    this.tweetFive = true;
-                    this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Where’s Flextape when you need it!?");
-                }
-                break;
-            default:
-                break;
+            if (!this.tweetOne)
+            {
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("The coronavirus panic is dumb");
+                this.tweetOne = true;
+            }
+        }
+        else if (distRange * 2 == (int)(GlobalClass.DistanceTraveled))
+        {
+            if (!this.tweetTwo)
+            {
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("I put the art in fart");
+                this.tweetTwo = true;
+            }
+        }
+        else if (distRange * 3 == (int)(GlobalClass.DistanceTraveled))
+        {
+            if (!this.tweetThree)
+            {
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Mad respect for the makers of things");
+                this.tweetThree = true;
+            }
+        }
+        else if (distRange * 4 == (int)(GlobalClass.DistanceTraveled))
+        {
+            if (!this.tweetFour)
+            {
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Bernie’s tax rate is 0.2 % too high!");
+                this.tweetFour = true;
+            }
+        }
+        else if (distRange * 5 == (int)(GlobalClass.DistanceTraveled))
+        {
+            if (!this.tweetFive)
+            {
+                this.tweetFive = true;
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Where’s Flextape when you need it!?");
+            }
+        }
+        else if (distRange * 6 == (int)(GlobalClass.DistanceTraveled))
+        {
+            if (!this.tweetSix)
+            {
+                this.tweetSix = true;
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Meteor!!");
+            }
+        }
+        else if (distRange * 7 == (int)(GlobalClass.DistanceTraveled))
+        {
+            if (!this.tweetSeven)
+            {
+                this.tweetSeven = true;
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("5 mins from liftoff");
+            }
+        }
+        else if (distRange * 8 == (int)(GlobalClass.DistanceTraveled))
+        {
+            if (!this.tweetEight)
+            {
+                this.tweetEight = true;
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Only the heart senses beauty");
+            }
+        }
+        else if (distRange * 9 == (int)(GlobalClass.DistanceTraveled))
+        {
+            if (!this.tweetNine)
+            {
+                this.tweetNine = true;
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Buttcrackers for days");
+            }
+        }
+        else if (distRange * 9.5 == (int)(GlobalClass.DistanceTraveled))
+        {
+            if (!this.tweetTen)
+            {
+                this.tweetTen = true;
+                this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("If you got this far then make us win the hackathon!");
+            }
         }
     }
 
