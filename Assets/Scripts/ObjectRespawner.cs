@@ -8,6 +8,7 @@ public class ObjectRespawner : MonoBehaviour
     public GameObject asteroidPrefab;
     public float respawnTime = 1.0f;
     private UnityEngine.Random random = new UnityEngine.Random();
+    public bool innerActive = true;
     // Use this for initialization
     void Start()
     {
@@ -15,7 +16,7 @@ public class ObjectRespawner : MonoBehaviour
     }
     private void spawnEnemy()
     {
-        if (Convert.ToBoolean(UnityEngine.Random.Range(0, 2)))
+        if (Convert.ToBoolean(UnityEngine.Random.Range(0, 2 )) && this.innerActive)
         {
             Vector3 pos = new Vector3(UnityEngine.Random.Range(-8, 8), this.transform.position.y, this.transform.position.z);
             GameObject gm = Instantiate(this.asteroidPrefab, pos, Quaternion.identity) as GameObject;
