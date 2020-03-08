@@ -31,6 +31,7 @@ public class ShipMovementScript : MonoBehaviour
         this.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         this.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
         body = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
@@ -120,6 +121,7 @@ public class ShipMovementScript : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<AudioManager>().play("shipExploding");
             this.decreaseHealth(other.gameObject.transform.localScale.x * other.gameObject.GetComponent<Rigidbody2D>().mass*10);
             Destroy(other.gameObject);
+            //Destroy(Explosion, 1.7f);
         }
     }
 
