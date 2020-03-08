@@ -8,7 +8,10 @@ public class ShipMovementScript : MonoBehaviour
     // Copied from https://stuartspixelgames.com/2018/06/24/simple-2d-top-down-movement-unity-c/
     Rigidbody2D body;
     public Camera mainCamera;
+    private int MaxHealth;
     private int health;
+    public int HealthPartCount;
+    public List<GameObject> HealthPartsList = new List<GameObject>();
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
@@ -74,8 +77,11 @@ public class ShipMovementScript : MonoBehaviour
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
     }
 
-    public void decreaseHealth(float degradeHealthBy) {
+    public void decreaseHealth(float degradeHealthBy)
+    {
         this.health -= (int)degradeHealthBy;
+        ShowHealthStatus();
+        print("health: " + health);
 
         // TODO Add more variations!
         this.tweetSpawnerPrefab.GetComponent<TweetSpawner>().spawn("Fucking asteroids");
@@ -90,16 +96,35 @@ public class ShipMovementScript : MonoBehaviour
         if (other.gameObject.tag == "Destroyable")
         {
             // TODO Create a gif instance here
-            this.decreaseHealth(other.gameObject.transform.localScale.x * other.gameObject.GetComponent<Rigidbody2D>().mass);
+            this.decreaseHealth(other.gameObject.transform.localScale.x * other.gameObject.GetComponent<Rigidbody2D>().mass*10);
             Destroy(other.gameObject);
         }
     }
 
     public void resetHealth() {
         this.health = 100;
+        MaxHealth = health;
     }
 
     public int getHealth() {
         return this.health;
+    }
+
+    void ShowHealthStatus()
+    {
+        //health
+        int ActiveHealthParts = health / (MaxHealth / HealthPartCount);
+
+        for (int i = 1; i < HealthPartsList.Count; i++)
+        {
+            if (i < ActiveHealthParts)
+            {
+                HealthPartsList[i].SetActive(true);
+            }
+            else
+            {
+                HealthPartsList[i].SetActive(false);
+            }
+        }
     }
 }
