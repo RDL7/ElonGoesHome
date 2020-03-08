@@ -9,23 +9,27 @@ public class EndGameSpawnerScript : MonoBehaviour
     public GameObject EndLogoPrefab;
     public GameObject TweetSpawner;
     public GameObject Mars;
+
+    GameObject AsteroidSpawner;
     // Start is called before the first frame update
 
     void Start()
     {
+        AsteroidSpawner = GameObject.Find("AsteroidSpawner");
         StartCoroutine(this.StartGame());
     }
 
     public IEnumerator StartGame()
     {
-        GameObject.Find("AsteroidSpawner").GetComponent<ObjectRespawner>().innerActive = false;
+        AsteroidSpawner.GetComponent<ObjectRespawner>().innerActive = false;
         yield return new WaitForSeconds(5);
-        GameObject.Find("AsteroidSpawner").GetComponent<ObjectRespawner>().innerActive = true;
+        AsteroidSpawner.GetComponent<ObjectRespawner>().innerActive = true;
     }
 
-    public IEnumerator EndGame() {
-        Destroy(GameObject.Find("AsteroidSpawner"));
-        Instantiate(this.teslaCarPrefab, this.transform.position, Quaternion.identity);
+    public IEnumerator EndGame()
+    {
+        Destroy(AsteroidSpawner);
+        Instantiate(teslaCarPrefab, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(5);
         TweetSpawner.GetComponent<TweetSpawner>().spawn("Mars - home, sweet home...");
         GameObject.Find("BAckGround_1").GetComponent<BackGround>().speed = 0;
