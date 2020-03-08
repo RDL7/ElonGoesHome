@@ -108,7 +108,7 @@ public class ShipMovementScript : MonoBehaviour
         if (this.health < 0 ) {
             Destroy(this.gameObject);
             GlobalClass.DistanceTraveled = 0;
-            SceneManager.LoadScene("ShipFlyScene");
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGameSpawnerScript : MonoBehaviour
 {
@@ -34,8 +35,7 @@ public class EndGameSpawnerScript : MonoBehaviour
         yield return new WaitForSeconds(8);
         Instantiate(this.Mars, this.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(3);
-        print("Quitting the app");
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
