@@ -1641,6 +1641,7 @@ GameObject:
   - component: {fileID: 1684415676}
   - component: {fileID: 1684415675}
   - component: {fileID: 6607181618637458239}
+  - component: {fileID: 1684415677}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1678,7 +1679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684415674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 7.59, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1175595491}
@@ -1689,6 +1690,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1684415677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684415674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b060ef9a2c4760bfa96e579922ba0381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teslaCarPrefab: {fileID: 6996690281772842645, guid: 23d9208a80473d49f9680423a2aaef78,
+    type: 3}
+  EndLogoPrefab: {fileID: 6655612370073312720, guid: 5ee54e9ad6728c3e0b0e7503eb3ca829,
+    type: 3}
+  TweetSpawner: {fileID: 1880684080}
+  Mars: {fileID: 230081850737808799, guid: ec9a2c5d4531b34ecb6a6fb2a7830ad5, type: 3}
 --- !u!1001 &1712402218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1890,6 +1909,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1185717475814168814, guid: c359a17298e0cea4995573949832f95b,
+        type: 3}
+      propertyPath: ProgressBarFill
+      value: 
+      objectReference: {fileID: 2016975869}
+    - target: {fileID: 1185717475814168814, guid: c359a17298e0cea4995573949832f95b,
+        type: 3}
+      propertyPath: ProgressCarIcon
+      value: 
+      objectReference: {fileID: 2016975868}
+    - target: {fileID: 1185717475814168814, guid: c359a17298e0cea4995573949832f95b,
+        type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1684415674}
     - target: {fileID: 1185717477465955776, guid: c359a17298e0cea4995573949832f95b,
         type: 3}
       propertyPath: m_Name
@@ -1952,6 +1986,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c359a17298e0cea4995573949832f95b, type: 3}
+--- !u!1 &2016975868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1185717475801765619, guid: c359a17298e0cea4995573949832f95b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2016975867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2016975869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1185717475814168803, guid: c359a17298e0cea4995573949832f95b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2016975867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2023458968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,7 +2612,7 @@ PrefabInstance:
     - target: {fileID: 8293976314093068903, guid: 8084059aeda0cc2a1a3c5a5a8d664824,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.92
+      value: -19.05
       objectReference: {fileID: 0}
     - target: {fileID: 8293976314093068903, guid: 8084059aeda0cc2a1a3c5a5a8d664824,
         type: 3}

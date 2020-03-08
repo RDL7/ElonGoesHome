@@ -6,6 +6,7 @@ public class ProgressBar : MonoBehaviour
 {
     public GameObject ProgressBarFill;
     public GameObject ProgressCarIcon;
+    public GameObject GameManager;
     float MaxProgressBarScale;
     float CurrentProgressBarScale;
 
@@ -49,5 +50,6 @@ public class ProgressBar : MonoBehaviour
     void GameEnd()
     {
         print("ELON HOME");
+        StartCoroutine(this.GameManager.GetComponent<EndGameSpawnerScript>().EndGame());
     }
 }

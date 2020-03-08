@@ -6,7 +6,7 @@ public class TweetScript : MonoBehaviour
 {
 
     void Start(){
-        Destroy(gameObject, 15);
+        Destroy(gameObject, 20);
     }
     void Update()
     {
