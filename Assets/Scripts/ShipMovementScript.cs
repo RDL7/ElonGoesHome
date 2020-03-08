@@ -36,6 +36,15 @@ public class ShipMovementScript : MonoBehaviour
     {
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
+        if (horizontal == -1)
+        {
+            //gameObject.transform.Rotate(new Vector3(0, 1, 0), -13.0f);
+        }
+        if (horizontal == 1)
+        {
+            //gameObject.transform.Rotate(new Vector3(0, 1, 0), 13.0f);
+        }
+
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
         if (Input.GetKeyDown("space"))
         {
