@@ -113,17 +113,29 @@ public class ShipMovementScript : MonoBehaviour
     void ShowHealthStatus()
     {
         //health
-        int ActiveHealthParts = health / (MaxHealth / HealthPartCount);
-
-        for (int i = 1; i < HealthPartsList.Count; i++)
+        int ActiveHealthParts = 1 + health / (MaxHealth / HealthPartCount);
+        //print("ActiveHP: " + ActiveHealthParts);
+        for (int i = 0; i < HealthPartsList.Count; i++)
         {
             if (i < ActiveHealthParts)
             {
                 HealthPartsList[i].SetActive(true);
+                if (i == ActiveHealthParts-1)
+                {
+                    HealthPartsList[i].gameObject.GetComponent<BlinkHealthBarPart>().StartBlinking();
+                }
             }
             else
             {
                 HealthPartsList[i].SetActive(false);
+            }
+        }
+
+        if (health <= 0)
+        {
+            foreach (var Bar in HealthPartsList)
+            {
+                Bar.SetActive(false);
             }
         }
     }

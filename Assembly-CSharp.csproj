@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BackGround.cs" />
     <Compile Include="Assets\Scripts\BackGroundSprite.cs" />
+    <Compile Include="Assets\Scripts\BlinkHealthBarPart.cs" />
     <Compile Include="Assets\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\Scripts\CountShipDistance.cs" />
     <Compile Include="Assets\Scripts\DestroyableObjectCollector.cs" />

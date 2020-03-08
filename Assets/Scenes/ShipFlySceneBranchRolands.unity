@@ -371,6 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243453817}
   - component: {fileID: 243453818}
+  - component: {fileID: 243453819}
   m_Layer: 0
   m_Name: cyber truck color5
   m_TagString: Untagged
@@ -442,6 +443,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &243453819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243453816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd3e454cada786409dd6cc5b5f14d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blink: 0
 --- !u!1 &483017560
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 483017561}
   - component: {fileID: 483017562}
+  - component: {fileID: 483017563}
   m_Layer: 0
   m_Name: cyber truck color4
   m_TagString: Untagged
@@ -523,6 +538,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &483017563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483017560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd3e454cada786409dd6cc5b5f14d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blink: 0
 --- !u!1 &542705687
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542705688}
   - component: {fileID: 542705689}
+  - component: {fileID: 542705690}
   m_Layer: 0
   m_Name: cyber truck color1
   m_TagString: Untagged
@@ -604,6 +633,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &542705690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542705687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd3e454cada786409dd6cc5b5f14d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blink: 0
 --- !u!1001 &855786379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -683,6 +725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 895196721}
   - component: {fileID: 895196722}
+  - component: {fileID: 895196723}
   m_Layer: 0
   m_Name: cyber truck color3
   m_TagString: Untagged
@@ -754,6 +797,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &895196723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895196720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd3e454cada786409dd6cc5b5f14d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blink: 0
 --- !u!1 &934353905
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 934353906}
   - component: {fileID: 934353907}
+  - component: {fileID: 934353908}
   m_Layer: 0
   m_Name: cyber truck color2
   m_TagString: Untagged
@@ -835,6 +892,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &934353908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934353905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd3e454cada786409dd6cc5b5f14d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blink: 0
 --- !u!1 &1188256107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3516066654683260756, guid: 06a789e66b9ef56148528e61e050d114,
