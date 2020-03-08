@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\EndGameSpawnerScript.cs" />
      <Compile Include="Assets\Scripts\GlobalClass.cs" />
      <Compile Include="Assets\Scripts\LaserColliderScript.cs" />
+     <Compile Include="Assets\Scripts\MenuScreenManager.cs" />
      <Compile Include="Assets\Scripts\Meteor.cs" />
      <Compile Include="Assets\Scripts\ObjectRespawner.cs" />
      <Compile Include="Assets\Scripts\ProgressBar.cs" />
